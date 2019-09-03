@@ -7,7 +7,6 @@ imports:
   - http://cloudify.co/spec/cloudify/4.5.5/types.yaml
   - plugin:cloudify-gcp-plugin
   - plugin:cloudify-utilities-plugin
-  - plugin:cloudify-diamond-plugin
   - types/nodecellar.yaml
   - types/gcp-types.yaml
   - types/haproxy/haproxy.yaml
