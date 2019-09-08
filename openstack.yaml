@@ -44,10 +44,16 @@ inputs:
     default: external
 
   network_deployment_name:
+    description: name of existing network deploymnet or the one to be called if create 
     default: openstack-example-network
     
   network_blueprint_name:
-    default: openstack-example-network 
+    description: name of local blueprint if using existing resource, or name t call if create
+    default: openstack-example-network
+  
+  network_blueprint_archive:
+    description: zip file location 
+    default: openstack-example-network
     
   network_blueprint_main_yaml:  
     default: blueprint.yaml  
@@ -281,8 +287,8 @@ node_templates:
     properties:
       resource_config:
         blueprint:
-          id: { get_input: network_deployment_name }
-          blueprint_archive: { get_input: network_blueprint_name }
+          id: { get_input: network_blueprint_name }
+          blueprint_archive: { get_input: network_blueprint_archive }
           main_file_name: { get_input: network_blueprint_main_yaml }
           external_resource: { get_input: use_existing_network_deployment }
         deployment:
