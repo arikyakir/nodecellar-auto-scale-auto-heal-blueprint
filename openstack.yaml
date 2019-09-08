@@ -49,7 +49,7 @@ inputs:
   network_blueprint_name:
     default: openstack-example-network 
     
-  network_main_yaml_name:  
+  network_blueprint_main_yaml:  
     default: blueprint.yaml  
 
   use_existing_network_deployment:
@@ -283,7 +283,7 @@ node_templates:
         blueprint:
           id: { get_input: network_deployment_name }
           blueprint_archive: { get_input: network_blueprint_name }
-          main_file_name: { get_input: network_main_yaml_name }
+          main_file_name: { get_input: network_blueprint_main_yaml }
           external_resource: { get_input: use_existing_network_deployment }
         deployment:
           id: { get_input: network_deployment_name }
